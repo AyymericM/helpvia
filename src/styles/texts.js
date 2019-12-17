@@ -22,6 +22,12 @@ const texts = StyleSheet.create({
         fontSize: 14,
         fontFamily: "HelveticaNeue-Regular",
         color: colors.colorGray
+    },
+    link: {
+        fontSize: 10,
+        fontFamily: "HelveticaNeue-Medium",
+        textDecorationLine: 'underline',
+        color: colors.colorBlack
     }
 })
 
