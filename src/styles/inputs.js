@@ -8,7 +8,7 @@ const inputs = StyleSheet.create({
         paddingVertical: 11,
         fontFamily: 'HelveticaNeue-Medium',
         backgroundColor: 'white',
-        color: 'white',
+        color: 'black',
         borderWidth: 1,
         borderColor: '#D7D7D7',
         borderRadius: 4
