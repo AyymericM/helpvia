@@ -24,7 +24,7 @@ export default class Add extends Component {
                 <View style={[styles.header]}>
                     <Text style={texts.title}>Ajouter un produit</Text>
                     <Text style={texts.info,styles.subtitle}>
-                        Sélectionner le type de produit et la quantité, Helpvia s'occupe du reste !
+                        Selectionner le type de produit et la quantité, Helpvia s'occupe du reste !
                     </Text>
                 </View>
                 <Text style={texts.label}>Type de produit</Text>

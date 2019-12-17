@@ -35,7 +35,7 @@ export default class Profile extends Component {
                     selectedValue={this.state.business}
                     style={styles.select} 
                     onValueChange={(itemValue, itemIndex) =>
-                        this.setState({product: itemValue})
+                        this.setState({business: itemValue})
                     }>
                     <Picker.Item label="Boulangerie" value="boulangerie" />
                     <Picker.Item label="Epicerie" value="epicerie" />
@@ -72,8 +72,9 @@ const styles = StyleSheet.create({
         paddingVertical: 14
     },
     select : {
+        marginTop: 6,
         width: '100%',
-        height: 80,
+        height: 50,
         color: colors.colorBlack,
         fontFamily: 'HelveticaNeue-Medium',
         backgroundColor: colors.colorLightGray,
