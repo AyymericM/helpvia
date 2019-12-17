@@ -1,3 +1,5 @@
-export { default as Home } from './Home'
+export { default as Balance } from './Balance'
 export { default as Profile } from './Profile'
 export { default as Planning } from './Planning'
+export { default as Donations } from './Donations'
+export { default as Add } from './Add'

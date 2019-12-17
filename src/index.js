@@ -3,7 +3,7 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 
 import { MainProvider, MainConsumer } from './stores/MainStore'
 import { Navbar } from './components'
-import { Home, Profile, Planning } from './containers'
+import { Donations, Profile, Balance, Planning, Add } from './containers'
 
 export default class App extends Component {
     render() {
@@ -14,8 +14,10 @@ export default class App extends Component {
 					<MainConsumer>
 						{({ state }) => (
 							<View style={styles.content}>
+								{(state.activeScreen === 'balance' ? <Balance /> : null)}
 								{(state.activeScreen === 'planning' ? <Planning /> : null)}
-								{(state.activeScreen === 'home' ? <Home /> : null)}
+								{(state.activeScreen === 'add' ? <Add /> : null)}
+								{(state.activeScreen === 'donations' ? <Donations /> : null)}
 								{(state.activeScreen === 'profile' ? <Profile /> : null)}
 							</View>
 						)}

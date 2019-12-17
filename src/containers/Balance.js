@@ -7,7 +7,7 @@ import {
 import { texts } from '../styles'
 import { MainConsumer } from '../stores/MainStore'
 
-export default class Home extends Component {
+export default class Balance extends Component {
     render() {
         return (
             <MainConsumer>

@@ -16,21 +16,21 @@ export default class Navbar extends Component {
             <MainConsumer>
                 {({state, actions}) => (
                     <View style={styles.container}>
-                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('home')}>
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('balance')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/balance.png')}
                             />
                             <Text style={texts.label}>Cagnotte</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('home')}>
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('donations')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/donate.png')}
                             />
                             <Text style={texts.label}>Dons</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('home')}>
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('add')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/add.png')}
