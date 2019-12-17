@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import Image from 'react-native-remote-svg';
 import {
 	StyleSheet,
-	View,
-    TouchableOpacity
+    View,
+    Text,
+    TouchableOpacity,
+    Image
 } from 'react-native';
 
+import { texts } from '../styles'
 import { MainConsumer } from '../stores/MainStore'
 
 export default class Navbar extends Component {
@@ -14,44 +16,40 @@ export default class Navbar extends Component {
             <MainConsumer>
                 {({state, actions}) => (
                     <View style={styles.container}>
-                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('planning')}>
-                            {state.activeScreen === 'planning' ?
-                                <Image
-                                    style={styles.navimage}
-                                    source={require('../assets/menu/planning_active.svg')}
-                                />
-                            :
-                                <Image
-                                    style={styles.navimage}
-                                    source={require('../assets/menu/planning.svg')}
-                                />
-                            }
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('home')}>
+                            <Image
+                                style={styles.navimage}
+                                source={require('../assets/menu/balance.png')}
+                            />
+                            <Text style={texts.label}>Cagnotte</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('home')}>
-                            {state.activeScreen === 'home' ?
-                                <Image
-                                    style={styles.navimage}
-                                    source={require('../assets/menu/home_active.svg')}
-                                />
-                            :
-                                <Image
-                                    style={styles.navimage}
-                                    source={require('../assets/menu/home.svg')}
-                                />
-                            }
+                            <Image
+                                style={styles.navimage}
+                                source={require('../assets/menu/donate.png')}
+                            />
+                            <Text style={texts.label}>Dons</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('home')}>
+                            <Image
+                                style={styles.navimage}
+                                source={require('../assets/menu/add.png')}
+                            />
+                            <Text style={texts.label}>Ajouter</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('planning')}>
+                            <Image
+                                style={styles.navimage}
+                                source={require('../assets/menu/planning.png')}
+                            />
+                            <Text style={texts.label}>Agenda</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('profile')}>
-                            {state.activeScreen === 'profile' ?
-                                <Image
-                                    style={styles.navimage}
-                                    source={require('../assets/menu/profile_active.svg')}
-                                />
-                            :
-                                <Image
-                                    style={styles.navimage}
-                                    source={require('../assets/menu/profile.svg')}
-                                />
-                            }
+                            <Image
+                                style={styles.navimage}
+                                source={require('../assets/menu/profile.png')}
+                            />
+                            <Text style={texts.label}>Profil</Text>
                         </TouchableOpacity>
                     </View>
                 )}
@@ -67,17 +65,22 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        borderTopWidth: 1,
+        borderTopColor: '#E2E2E2'
     },
     navitem: {
-        height: 80,
-        width: 80,
+        height: 60,
+        width: 70,
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center'
     },
     navimage: {
-        height: 50,
-        width: 50,
+        height: 32,
+        width: 32,
+        resizeMode: 'contain',
+        marginBottom: 5
     }
 });

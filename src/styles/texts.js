@@ -10,7 +10,8 @@ const texts = StyleSheet.create({
     label: {
         fontSize: 11,
         fontFamily: "HelveticaNeue-Medium",
-        color: colors.colorBlack
+        color: colors.colorBlack,
+        textTransform: 'uppercase'
     },
     info: {
         fontSize: 14,
