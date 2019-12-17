@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, View, StatusBar, ScrollView } from 'react-native';
 
 import { MainProvider, MainConsumer } from './stores/MainStore'
 import { Navbar } from './components'
@@ -9,21 +9,23 @@ export default class App extends Component {
     render() {
         return (
 			<MainProvider>
-				<StatusBar backgroundColor="white" barStyle="dark-content" />
-				<View style={styles.container}>
-					<MainConsumer>
-						{({ state }) => (
-							<View style={styles.content}>
-								{(state.activeScreen === 'balance' ? <Balance /> : null)}
-								{(state.activeScreen === 'planning' ? <Planning /> : null)}
-								{(state.activeScreen === 'add' ? <Add /> : null)}
-								{(state.activeScreen === 'donations' ? <Donations /> : null)}
-								{(state.activeScreen === 'profile' ? <Profile /> : null)}
-							</View>
-						)}
-					</MainConsumer>
-				</View>
-				<Navbar />
+				<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+					<StatusBar backgroundColor="white" barStyle="dark-content" />
+					<View style={styles.container}>
+						<MainConsumer>
+							{({ state }) => (
+								<View style={styles.content}>
+									{(state.activeScreen === 'balance' ? <Balance /> : null)}
+									{(state.activeScreen === 'planning' ? <Planning /> : null)}
+									{(state.activeScreen === 'add' ? <Add /> : null)}
+									{(state.activeScreen === 'donations' ? <Donations /> : null)}
+									{(state.activeScreen === 'profile' ? <Profile /> : null)}
+								</View>
+							)}
+						</MainConsumer>
+					</View>
+					<Navbar />
+				</ScrollView>
 			</MainProvider>
         );
     }

@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         borderTopWidth: 1,
-        borderTopColor: '#E2E2E2'
+        borderTopColor: '#E2E2E2',
+        backgroundColor: 'white'
     },
     navitem: {
         height: 60,
