@@ -7,7 +7,7 @@ class MainProvider extends Component {
     constructor() {
         super()
         this.state = {
-            activeScreen: 'home',
+            activeScreen: 'balance',
             planning: [
                 {
                     name: 'Jean-Clodo',
