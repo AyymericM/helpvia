@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 9">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+<path id="Oval" fill-rule="evenodd" clip-rule="evenodd" d="M32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64Z" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<g id="user">
+<path id="Oval_2" d="M31.9775 29.9178C38.0299 29.9178 42.9364 25.0113 42.9364 18.9589C42.9364 12.9065 38.0299 8 31.9775 8C25.925 8 21.0186 12.9065 21.0186 18.9589C21.0186 25.0113 25.925 29.9178 31.9775 29.9178Z" fill="#235EB2"/>
+<path id="Path" d="M31.9773 35.3975C21.0072 35.3975 12.1143 44.2904 12.1143 55.2605H51.8403C51.8403 44.2904 42.9473 35.3975 31.9773 35.3975Z" fill="#235EB2"/>
+</g>
+</g>
+</g>
+</svg>

@@ -66,7 +66,9 @@ class MainProvider extends Component {
 
     addItem(data) {
         const newItems = this.state.items.push(data)
-
+        const id = Math.random().toString(36).substr(2, 9)
+        newItems.id = id
+        
         this.setState({
             data: {
                 ...this.state.data,

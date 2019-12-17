@@ -19,8 +19,8 @@ export default class App extends Component {
 							</View>
 						)}
 					</MainConsumer>
-					<Navbar />
 				</View>
+				<Navbar />
 			</MainProvider>
         );
     }
@@ -28,6 +28,7 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
 	container: {
+		padding: 25,
 		flex: 1
 	},
 	content: {
