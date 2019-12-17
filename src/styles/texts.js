@@ -7,6 +7,11 @@ const texts = StyleSheet.create({
         fontFamily: 'HelveticaNeue-Bold',
         color: colors.colorBlack
     },
+    regular: {
+        fontSize: 14,
+        fontFamily: 'HelveticaNeue-Medium',
+        color: colors.colorBlack
+    },
     label: {
         fontSize: 11,
         fontFamily: "HelveticaNeue-Medium",

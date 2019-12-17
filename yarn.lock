@@ -5039,6 +5039,11 @@ react-native-remote-svg@^2.0.6:
   resolved "https://registry.yarnpkg.com/react-native-remote-svg/-/react-native-remote-svg-2.0.6.tgz#5f8bc7cefc18f4d37cf02f8158d6b2a9f534891d"
   integrity sha512-tQbDL+gtfGgG9Evz5TOn5Odmrn/EYsmsLqVZ0Do0VMJevfLBuQRioLiwRsI/BCgOHu1oQLZIIE5p7V/lN9jLrw==
 
+react-native-simple-radio-button@^2.7.4:
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/react-native-simple-radio-button/-/react-native-simple-radio-button-2.7.4.tgz#86e2dbe8af9e6bf60eee088f60466f7a975e7758"
+  integrity sha512-QOZNmJUn0ViBGU+at7wAG/uGzd5PfXi0kMHr9lfTCLXknW/f9f2fOVjxjdHvOCdf/zA/eMJBjGjtusSDzQf1+w==
+
 react-native-webview@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-8.0.1.tgz#f4dccb95b0f8d0c6e2afd92f3dc42470f1b537ef"
