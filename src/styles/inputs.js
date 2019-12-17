@@ -12,6 +12,11 @@ const inputs = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#D7D7D7',
         borderRadius: 4
+    },
+    fullWidth: {
+        width: "100%",
+        borderWidth: 1,
+        borderColor: '#D7D7D7'
     }
 })
 
