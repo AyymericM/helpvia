@@ -18,6 +18,13 @@ export default class Add extends Component {
         }        
     }
 
+    minusOneProduct(){
+        if(this.state.count>0){
+            this.setState({
+                count: this.state.count-=1
+            })
+        }
+    }
     render() {
         return (
             <View>
@@ -46,9 +53,9 @@ export default class Add extends Component {
                     <View>
                         <Text style={texts.label}>Quantité</Text>
                         <View style={styles.count}>
-                            <Text onPress={() => this.setState({count:count++}) } style={[buttons.primary, styles.button]}>-</Text>
+                            <Text onPress={() => this.minusOneProduct() } style={[buttons.primary, styles.button]}>-</Text>
                             <Text style={[inputs.primary,styles.countInput]}>{this.state.count}</Text>
-                            <Text onPress={() => this.setState({count:count--}) } style={[buttons.primary, styles.button]}>+</Text>
+                            <Text onPress={() => this.setState({count:this.state.count+=1}) } style={[buttons.primary, styles.button]}>+</Text>
                         </View>
                     </View>
                 </View>
