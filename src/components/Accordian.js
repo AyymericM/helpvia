@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet} from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet,Image} from "react-native";
 import { texts, buttons, inputs, colors } from '../styles'
 
 export default class Accordian extends Component{
@@ -18,9 +18,7 @@ export default class Accordian extends Component{
        <View>
             <TouchableOpacity style={styles.row} onPress={()=>this.toggleExpand()}>
                 <Text style={[styles.title]}>{this.props.title}</Text>
-                <Image
-                    source={require('../assets/dropdown.svg')}
-                />
+                <Image source={require('../assets/dropdown.svg')} />
             </TouchableOpacity>
             <View style={styles.parentHr}/>
             {
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     },
     parentHr:{
         height:1,
-        color: white,
+        color: "white",
         width:'100%'
     },
     child:{
