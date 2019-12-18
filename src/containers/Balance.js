@@ -15,7 +15,8 @@ export default class Balance extends Component {
         super(props)
 
         this.state = {
-            selectedChoice: 0
+            selectedChoice: 0,
+            amount: 0
         }
 
         this.radioProps = [
@@ -95,7 +96,14 @@ export default class Balance extends Component {
                         <View style={styles.row}>
                             <View style={styles.column}>
                                 <Text style={texts.label}>Somme</Text>
-                                <TextInput style={[inputs.primary, styles.input]}></TextInput>
+                                <TextInput
+                                    style={[inputs.primary, styles.input]}
+                                    keyboardType={'number-pad'}
+                                    maxLength={5}
+                                    selectTextOnFocus={true}
+                                    value={this.state.amount.toString()}
+                                    onChangeText={v => this.setState({ amount: v })}>
+                                </TextInput>
                             </View>
                             <Text style={[buttons.primary, styles.button]}>Ajouter à la cagnotte</Text>
                         </View>
@@ -127,6 +135,7 @@ const styles = StyleSheet.create({
     input: {
         marginTop: 5,
         marginRight: 10,
+        paddingHorizontal: 10,
         width: 80
     },  
     button: {
