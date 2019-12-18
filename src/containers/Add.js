@@ -35,20 +35,21 @@ export default class Add extends Component {
                     </Text>
                 </View>
                 <Text style={texts.label}>Type de produit</Text>
-                <Picker 
-                    selectedValue={this.state.product}
-                    style={styles.select} 
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({product: itemValue})
-                    }>
-                    <Picker.Item label="Croissant" value="croissants" />
-                    <Picker.Item label="Café" value="cafés" />
-                </Picker>
+                <View style={styles.select} >
+                    <Picker
+                        selectedValue={this.state.product} 
+                        onValueChange={(itemValue, itemIndex) =>
+                            this.setState({product: itemValue})
+                        }>
+                        <Picker.Item label="Croissant" value="croissants" />
+                        <Picker.Item label="Café" value="cafés" />
+                    </Picker>
+                </View>
                 <Text style={[{textAlign:"right",marginTop:10},texts.link]}>ou ajouter un autre type de produit</Text>
                 <View style={styles.inputs}>
                     <View>
                         <Text style={texts.label}>Prix à l'unité</Text>
-                        <TextInput style={[inputs.primary, styles.input]}></TextInput>
+                        <TextInput style={[inputs.primary, styles.input, { textAlign: 'right', paddingRight: 14}]}></TextInput>
                     </View>
                     <View>
                         <Text style={texts.label}>Quantité</Text>
@@ -78,13 +79,15 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     select : {
+        marginTop: 6,
         width: '100%',
         height: 50,
         color: colors.colorBlack,
         fontFamily: 'HelveticaNeue-Medium',
         backgroundColor: colors.colorLightGray,
         borderWidth: 1,
-        borderColor: colors.colorDarkGray
+        borderColor: colors.colorDarkGray,
+        borderRadius: 4
     },
     inputs: {
         flexDirection: 'row',

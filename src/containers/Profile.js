@@ -31,19 +31,20 @@ export default class Profile extends Component {
                 <Text style={[texts.label, styles.label]}>telephone</Text>
                 <TextInput style={[inputs.fullWidth, styles.input]}></TextInput>
                 <Text style={[texts.label, styles.label]}>Type de commerce</Text>
-                <Picker 
-                    selectedValue={this.state.business}
-                    style={styles.select} 
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({business: itemValue})
-                    }>
-                    <Picker.Item label="Boulangerie" value="boulangerie" />
-                    <Picker.Item label="Epicerie" value="epicerie" />
-                </Picker>
+                <View style={styles.select} >
+                    <Picker
+                        selectedValue={this.state.business}
+                        onValueChange={(itemValue, itemIndex) =>
+                            this.setState({business: itemValue})
+                        }>
+                        <Picker.Item label="Boulangerie" value="boulangerie" />
+                        <Picker.Item label="Epicerie" value="epicerie" />
+                    </Picker>
+                </View>
                 <Text style={[texts.label, styles.label]}>Adresse mail</Text>
                 <TextInput style={[inputs.fullWidth, styles.input]}></TextInput>
                 <Text style={[texts.label, styles.label]}>Mot de passe</Text>
-                <TextInput secureTextEntry={true} style={[inputs.fullWidth, styles.input]}></TextInput>
+                <TextInput secureTextEntry={true} style={[inputs.fullWidth, styles.input, styles.inputPassword]}></TextInput>
             </View>
         );
     }
@@ -67,16 +68,28 @@ const styles = StyleSheet.create({
         lineHeight: 24,
         color: colors.colorBlack,
         paddingLeft: 16,
-        paddingVertical: 14
+        paddingVertical: 14,
+        backgroundColor: colors.colorLightGray,
+        borderColor: colors.colorDarkGray,
+        borderWidth: 1,
+        borderRadius: 4,
+        height: 50
     },
     select : {
+        height: 50,
         marginTop: 6,
         width: '100%',
-        height: 50,
+        alignContent: "center",
+        paddingVertical: 1,
+        paddingLeft: 7,
         color: colors.colorBlack,
         fontFamily: 'HelveticaNeue-Medium',
         backgroundColor: colors.colorLightGray,
         borderWidth: 1,
-        borderColor: colors.colorDarkGray
+        borderColor: colors.colorDarkGray,
+        borderRadius: 4
+    },
+    inputPassword : {
+        
     }
 });
