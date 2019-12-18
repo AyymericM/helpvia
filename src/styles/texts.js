@@ -21,7 +21,8 @@ const texts = StyleSheet.create({
     info: {
         fontSize: 14,
         fontFamily: "HelveticaNeue-Regular",
-        color: colors.colorGray
+        color: colors.colorGray,
+        lineHeight: 20
     },
     link: {
         fontSize: 10,
