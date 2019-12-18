@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet} from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet,Image} from "react-native";
 import { texts, buttons, inputs, colors } from '../styles'
 
 export default class Accordian extends Component{
@@ -8,7 +8,7 @@ export default class Accordian extends Component{
         super(props);
         this.state = { 
           data: props.data,
-          expanded : false,
+          expanded : true,
         }
     }
   
@@ -17,21 +17,35 @@ export default class Accordian extends Component{
     return (
        <View>
             <TouchableOpacity style={styles.row} onPress={()=>this.toggleExpand()}>
-                <Text style={[styles.title]}>{this.props.title}</Text>
-                <Image
-                    source={require('../assets/dropdown.svg')}
-                />
+                <View style={[styles.titles]}>
+                    <Text style={[styles.title]}>{this.props.hour}</Text>
+                    <Text style={[styles.subtitle]}>{this.state.data.length} personnes</Text>
+                </View>
+                <Image style={[styles.image]} source={require('../assets/dropdown.png')} />
             </TouchableOpacity>
             <View style={styles.parentHr}/>
             {
                 this.state.expanded &&
-                <View style={styles.child}>
-                    <Text>{this.props.data}</Text>    
+                <View>
+                    { this.renderData() }  
                 </View>
             }
        </View>
     )
   }
+
+  renderData=()=> {
+    const items = [];
+    for (let item of this.state.data) {
+        items.push(
+            <View  style={styles.child}>
+                <Text style={[styles.name, {color:'white'}]}>{item.name}</Text>
+                <Text style={{color:'white'}}>{item.product}</Text>  
+            </View>
+        );
+    }
+    return items;
+    }
 
   toggleExpand=()=>{
     this.setState({expanded : !this.state.expanded})
@@ -42,26 +56,49 @@ export default class Accordian extends Component{
 const styles = StyleSheet.create({
     title:{
         fontSize: 14,
-        fontWeight:'bold',
-        color: colors.colorDarkGray,
+        fontFamily: 'HelveticaNeue-Bold',
+        color: colors.colorBlack,
+        marginRight: 10
+    },
+    subtitle:{
+        fontSize: 12,
+        fontFamily: "HelveticaNeue-Regular",
+        color: colors.colorGray,
+    },
+    titles: {
+        flexDirection: 'row',
+        alignItems:'center'
     },
     row:{
         flexDirection: 'row',
         justifyContent:'space-between',
-        height:56,
         paddingLeft:25,
         paddingRight:18,
-        alignItems:'center',
-        backgroundColor: colors.colorDarkGray,
+        marginTop: 20,
+        marginBottom: 10,
+        alignItems:'center'
     },
     parentHr:{
         height:1,
-        color: white,
+        color: "white",
         width:'100%'
     },
     child:{
-        backgroundColor: colors.colorBlue,
-        padding:16,
+        flexDirection: 'row',
+        backgroundColor: colors.colorLightBlue,
+        color: 'white',
+        marginVertical: 5,
+        marginLeft: 70,
+        borderRadius: 5,
+        padding:12,
+    },
+    name:{
+        fontFamily: 'HelveticaNeue-Bold',
+        marginRight: 10
+    },
+    image: {
+        width: 20,
+        height: 20
     }
     
 });
