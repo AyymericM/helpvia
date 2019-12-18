@@ -4,8 +4,8 @@ import {
 	View,
 	Text
 } from 'react-native';
-import { texts, buttons, inputs, colors } from '../styles'
-import {Accordian} from '../components'
+import { texts, buttons } from '../styles'
+import { Accordian } from '../components'
 
 export default class Planning extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, StatusBar, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, StatusBar, ScrollView } from 'react-native';
 
 import { MainProvider, MainConsumer } from './stores/MainStore'
 import { Navbar } from './components'

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { View, TouchableOpacity, Text, StyleSheet,Image} from "react-native";
-import { texts, buttons, inputs, colors } from '../styles'
+import { colors } from '../styles'
 
 export default class Accordian extends Component{
     constructor(props) {

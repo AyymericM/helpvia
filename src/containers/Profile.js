@@ -7,7 +7,7 @@ import {
     Picker
 } from 'react-native';
 
-import { texts, buttons, inputs, colors } from '../styles'
+import { texts, inputs, colors } from '../styles'
 
 export default class Profile extends Component {
 
