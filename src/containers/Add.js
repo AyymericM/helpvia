@@ -13,7 +13,7 @@ export default class Add extends Component {
         super(props)
 
         this.state = {
-            product: '',
+            product: 'croissants',
             count: 0
         }        
     }
@@ -30,7 +30,7 @@ export default class Add extends Component {
             <View>
                 <View style={[styles.header]}>
                     <Text style={texts.title}>Ajouter un produit</Text>
-                    <Text style={texts.info,styles.subtitle}>
+                    <Text style={[texts.info,styles.subtitle]}>
                         Selectionner le type de produit et la quantité, Helpvia s'occupe du reste !
                     </Text>
                 </View>
@@ -41,8 +41,8 @@ export default class Add extends Component {
                     onValueChange={(itemValue, itemIndex) =>
                         this.setState({product: itemValue})
                     }>
-                    <Picker.Item label="Croissant" value="croissant" />
-                    <Picker.Item label="Café" value="cafe" />
+                    <Picker.Item label="Croissant" value="croissants" />
+                    <Picker.Item label="Café" value="cafés" />
                 </Picker>
                 <Text style={[{textAlign:"right",marginTop:10},texts.link]}>ou ajouter un autre type de produit</Text>
                 <View style={styles.inputs}>
@@ -59,7 +59,7 @@ export default class Add extends Component {
                         </View>
                     </View>
                 </View>
-                <Text style={[buttons.primary, styles.submit]}>Ajouter 15 croissants</Text>
+                <Text style={[buttons.primary, styles.submit]}>Ajouter {this.state.count} {this.state.product}</Text>
             </View>
         );
     }
@@ -75,8 +75,7 @@ const styles = StyleSheet.create({
     },
     subtitle: {
         textAlign: 'center',
-        marginTop: 10,
-        color: colors.colorGray
+        marginTop: 10
     },
     select : {
         width: '100%',
