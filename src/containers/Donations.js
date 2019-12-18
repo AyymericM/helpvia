@@ -29,6 +29,7 @@ export default class Donations extends Component {
                                     <Text style={[texts.regular, styles.text_price]}>{`${i.price * i.amount} €`}</Text>
                                 </View>
                             ))}
+                            <Text style={[texts.regular, styles.text_total]}>{`Total: ${state.data.items.map(i => i.price * i.amount).reduce((a, b) => a + b)}`}</Text>
                         </View>
                         <View>
                             <Text style={buttons.primary}>Editer vos dons</Text>
@@ -68,6 +69,12 @@ const styles = StyleSheet.create({
     },
     text_price: {
         marginRight: 16
+    },
+    text_total: {
+        width: '100%',
+        textAlign: 'right',
+        paddingRight: 20,
+        marginVertical: 15
     },
     emoji: {
         backgroundColor: '#F9F9F9',
