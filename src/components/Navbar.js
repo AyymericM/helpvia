@@ -44,7 +44,7 @@ export default class Navbar extends Component {
                             />
                             <Text style={texts.label}>Agenda</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('onboarding')}>
+                        <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('profile')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/profile.png')}

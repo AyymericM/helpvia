@@ -15,6 +15,7 @@
     "react-native": "0.61.5",
     "react-native-remote-svg": "^2.0.6",
     "react-native-simple-radio-button": "^2.7.4",
+    "react-native-swiper": "^1.6.0-nightly.5",
     "react-native-webview": "^8.0.1"
   },
   "devDependencies": {
