@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import {
 	StyleSheet,
 	View,
-	Text,
-    Image
+	Text
 } from 'react-native';
-import { texts, colors, buttons } from '../styles';
+import { texts, buttons } from '../styles';
 import { MainConsumer } from '../stores/MainStore';
 
 export default class Donations extends Component {

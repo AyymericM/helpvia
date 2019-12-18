@@ -4,8 +4,8 @@ import {
 	View,
 	Text
 } from 'react-native';
-import { texts, buttons, inputs, colors } from '../styles'
-import {Accordian} from '../components'
+import { texts, buttons } from '../styles'
+import { Accordian } from '../components'
 
 export default class Planning extends Component {
 
@@ -65,30 +65,22 @@ export default class Planning extends Component {
                 </View>
                 <Text style={[buttons.primary, {marginVertical: 20}]}>Modifiez mes horaires d'ouverture</Text>
                 <View>
-                    { this.renderAccordians() }
+                    {this.state.agenda.map((i, key) => (
+                        <Accordian
+                            key={key}
+                            hour = {i.hour}
+                            data = {i.data}
+                        />
+                    ))}
                 </View>
             </View>
         );
-    }
-
-    renderAccordians=()=> {
-        const items = [];
-        for (let item of this.state.agenda) {
-            items.push(
-                <Accordian 
-                    hour = {item.hour}
-                    data = {item.data}
-                />
-            );
-        }
-        return items;
     }
 };
 
 const styles = StyleSheet.create({
     header: {
         width: '100%',
-        marginTop: 60,
     },
     subtitle: {
         marginTop: 10

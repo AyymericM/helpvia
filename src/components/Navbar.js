@@ -7,7 +7,7 @@ import {
     Image
 } from 'react-native';
 
-import { texts } from '../styles'
+import { texts, colors } from '../styles'
 import { MainConsumer } from '../stores/MainStore'
 
 export default class Navbar extends Component {
@@ -21,35 +21,35 @@ export default class Navbar extends Component {
                                 style={styles.navimage}
                                 source={require('../assets/menu/balance.png')}
                             />
-                            <Text style={texts.label}>Cagnotte</Text>
+                            <Text style={[texts.label, state.activeScreen === 'balance' ? styles.label_active : null]}>Cagnotte</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('donations')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/donate.png')}
                             />
-                            <Text style={texts.label}>Dons</Text>
+                            <Text style={[texts.label, state.activeScreen === 'donations' ? styles.label_active : null]}>Dons</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('add')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/add.png')}
                             />
-                            <Text style={texts.label}>Ajouter</Text>
+                            <Text style={[texts.label, state.activeScreen === 'add' ? styles.label_active : null]}>Ajouter</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('planning')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/planning.png')}
                             />
-                            <Text style={texts.label}>Agenda</Text>
+                            <Text style={[texts.label, state.activeScreen === 'planning' ? styles.label_active : null]}>Agenda</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} style={styles.navitem} onPress={() => actions.navigate('profile')}>
                             <Image
                                 style={styles.navimage}
                                 source={require('../assets/menu/profile.png')}
                             />
-                            <Text style={texts.label}>Profil</Text>
+                            <Text style={[texts.label, state.activeScreen === 'profile' ? styles.label_active : null]}>Profil</Text>
                         </TouchableOpacity>
                     </View>
                 )}
@@ -83,5 +83,8 @@ const styles = StyleSheet.create({
         width: 32,
         resizeMode: 'contain',
         marginBottom: 5
+    },
+    label_active: {
+        color: colors.colorBlue
     }
 });
