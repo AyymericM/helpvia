@@ -22,7 +22,7 @@ export default class Profile extends Component {
     render() {
         return (
             <View>
-                <Text style={[texts.title, styles.title]}>Votre Profil</Text> 
+                <Text style={texts.title}>Votre Profil</Text> 
                 <Text style={[texts.info, styles.text]}>Retrouvez ici l’ensemble des données de votre magasin : vos horaires, votre emplacement, etc</Text>
                 <Text style={[texts.label, styles.label]}>Nom du commerce</Text>
                 <TextInput style={[inputs.fullWidth, styles.input]}></TextInput> 
@@ -50,9 +50,6 @@ export default class Profile extends Component {
 };
 
 const styles = StyleSheet.create({
-    title: {
-        marginTop: 60
-    },
     text: {
         marginTop: 10
     },

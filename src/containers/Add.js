@@ -113,10 +113,7 @@ const styles = StyleSheet.create({
         width: 50
     },
     submit: {
-        marginTop: 180
+        marginTop: 100
     }
-    
-
-
 });
 
