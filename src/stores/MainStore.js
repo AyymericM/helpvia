@@ -7,7 +7,7 @@ class MainProvider extends Component {
     constructor() {
         super()
         this.state = {
-            activeScreen: 'balance',
+            activeScreen: 'donations',
             planning: [
                 {
                     name: 'Jean-Clodo',
@@ -19,19 +19,25 @@ class MainProvider extends Component {
                 balance: 132.0,
                 items: [
                     {
-                        id: 1,
-                        name: 'Café',
-                        amount: 1.0
+                        id: '2bl6rn1ph',
+                        emoji: '🥐',
+                        name: 'Croissants',
+                        amount: 15,
+                        price: 1.0
                     },
                     {
-                        id: 2,
-                        name: 'Cookie',
-                        amount: 2.5
+                        id: '9jsx86nm4',
+                        emoji: '🥪',
+                        name: 'Sandwichs poulet',
+                        amount: 4,
+                        price: 3.8
                     },
                     {
-                        id: 3,
-                        name: 'Chocolat chaud',
-                        amount: 2.8
+                        id: '1naip2jzl',
+                        emoji: '💧',
+                        name: `Bouteille d'eau`,
+                        amount: 30,
+                        price: 1.1
                     }
                 ],
                 profile: {
