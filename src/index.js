@@ -3,7 +3,7 @@ import { StyleSheet, View, StatusBar, ScrollView, KeyboardAvoidingView } from 'r
 
 import { MainProvider, MainConsumer } from './stores/MainStore'
 import { Navbar } from './components'
-import { Donations, Profile, Balance, Planning, Add } from './containers'
+import { Donations, Profile, Balance, Planning, Add, Onboarding } from './containers'
 
 export default class App extends Component {
     render() {
@@ -20,6 +20,7 @@ export default class App extends Component {
 									{(state.activeScreen === 'add' ? <Add /> : null)}
 									{(state.activeScreen === 'donations' ? <Donations /> : null)}
 									{(state.activeScreen === 'profile' ? <Profile /> : null)}
+									{(state.activeScreen === 'onboarding' ? <Onboarding /> : null)}
 								</View>
 							)}
 						</MainConsumer>
