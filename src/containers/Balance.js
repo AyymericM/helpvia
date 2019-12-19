@@ -40,23 +40,23 @@ export default class Balance extends Component {
     render() {
         return (
             <MainConsumer>
-                {({state}) => (
+                {({state, actions}) => (
                     <View>
                         <View style={[styles.header]}>
-                            <Text style={texts.title}>{state.data.balance} €</Text>
+                            <Text style={texts.title}>{state.data.balance.cb + state.data.balance.tr + state.data.balance.esp} €</Text>
                             <Text style={[texts.label, styles.text]}>Cagnotte totale</Text>
                             <View style={[styles.row, { justifyContent: 'space-around', width: '100%', marginTop: 30 }]}>
                                 <View style={[styles.row, { alignItems: 'center' }]}>
                                     <View style={[styles.dot, { backgroundColor: '#235EB2' }]}></View>
-                                    <Text style={texts.regular}>CB</Text>
+                                    <Text style={texts.regular}>{`CB (${state.data.balance.cb}€)`}</Text>
                                 </View>
                                 <View style={[styles.row, { alignItems: 'center' }]}>
                                     <View style={[styles.dot, { backgroundColor: '#E69917' }]}></View>
-                                    <Text style={texts.regular}>Ticket Resto</Text>
+                                    <Text style={texts.regular}>{`Ticket Resto (${state.data.balance.tr}€)`}</Text>
                                 </View>
                                 <View style={[styles.row, { alignItems: 'center' }]}>
                                     <View style={[styles.dot, { backgroundColor: '#23B271' }]}></View>
-                                    <Text style={texts.regular}>Espèces</Text>
+                                    <Text style={texts.regular}>{`Espèces (${state.data.balance.esp}€)`}</Text>
                                 </View>
                             </View>
                             <Text style={[texts.info, styles.text, { textAlign: 'center' }]}>Retrouvez ici l’ensemble des dons faits par votre clientèle, triés par type de paiement</Text>
@@ -66,7 +66,6 @@ export default class Balance extends Component {
                         </View>
                         <RadioForm
                             formHorizontal={true}
-                            onPress={(value) => {this.setState({value:value})}}
                             style={{ marginBottom: 30 }}
                         >
                             {this.radioProps.map((obj, i) => (
@@ -105,7 +104,15 @@ export default class Balance extends Component {
                                     onChangeText={v => this.setState({ amount: v })}>
                                 </TextInput>
                             </View>
-                            <Text style={[buttons.primary, styles.button]}>Ajouter à la cagnotte</Text>
+                            <Text
+                                style={[buttons.primary, styles.button]}
+                                onPress={() => {
+                                    actions.updateBalance({
+                                        choice: this.state.selectedChoice, amount: this.state.amount
+                                    })
+                                    this.setState({ amount: 0 })
+                                }}
+                            >Ajouter à la cagnotte</Text>
                         </View>
                     </View>
                 )}

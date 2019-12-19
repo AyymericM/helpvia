@@ -16,7 +16,11 @@ class MainProvider extends Component {
                 }
             ],
             data: {
-                balance: 132.0,
+                balance: {
+                    cb: 52.4,
+                    tr: 23.0,
+                    esp: 67.0,
+                },
                 items: [
                     {
                         id: '2bl6rn1ph',
@@ -63,7 +67,35 @@ class MainProvider extends Component {
 
         this.actions = {
             navigate: this.navigate.bind(this),
+            updateBalance: this.updateBalance.bind(this),
         }
+    }
+
+    updateBalance(data) {
+        if (data.choice === 1) {
+            const newamount = parseInt(this.state.data.balance.esp) + parseInt(data.amount)
+            this.setState({
+                data: {
+                    ...this.state.data,
+                    balance: {
+                        ...this.state.data.balance,
+                        esp: parseInt(newamount)
+                    }
+                }
+            })
+        } else {
+            const newamount = parseInt(this.state.data.balance.tr) + parseInt(data.amount)
+            this.setState({
+                data: {
+                    ...this.state.data,
+                    balance: {
+                        ...this.state.data.balance,
+                        tr: parseInt(newamount)
+                    }
+                }
+            })
+        }
+
     }
 
     navigate(name) {
