@@ -14,7 +14,8 @@ export default class Add extends Component {
 
         this.state = {
             product: 'croissants',
-            count: 0
+            count: 0,
+            amount: 0
         }        
     }
 
@@ -49,7 +50,14 @@ export default class Add extends Component {
                 <View style={styles.inputs}>
                     <View>
                         <Text style={texts.label}>Prix à l'unité</Text>
-                        <TextInput style={[inputs.primary, styles.input, { textAlign: 'right', paddingRight: 14}]}></TextInput>
+                        <TextInput
+                            style={[inputs.primary, styles.input, { textAlign: 'right', paddingRight: 14}]}
+                            keyboardType={'number-pad'}
+                            maxLength={5}
+                            selectTextOnFocus={true}
+                            value={this.state.amount.toString()}
+                            onChangeText={val => this.setState({ amount: val })}
+                        ></TextInput>
                     </View>
                     <View>
                         <Text style={texts.label}>Quantité</Text>
